@@ -22,12 +22,12 @@
 
     async function addUser() {
         const { data, error } = await client
-            .from("user")    // <- nome da sua tabela
+            .from("user")
             .insert({
                 name: "Welygton",
                 email: "tasas@gmail.com",
                 password: "123456",
-                avatar: "https://meuavatar.com/foto.png" // se quiser pode ser null
+                avatar: "https://meuavatar.com/foto.png"
             })
             .select();
             client.from("user").select("*").then(({ data, error }) => {
