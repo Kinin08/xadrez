@@ -1,4 +1,4 @@
-import showToast from "../toast/toast.js";
+import showToast from "./toast/toast.js";
 const form = document.querySelector('form');
 const toggleSenha = document.querySelector('#toggleSenha');
 const senhaInput = document.querySelector('#senha');
@@ -23,7 +23,7 @@ form.addEventListener('submit', async (e) => {
     const fd = new FormData(form);
 
     try {
-        const res = await fetch('../componentes/login.php', {
+        const res = await fetch('componentes/login.php', {
             method: 'POST',
             body: fd
         });
@@ -36,7 +36,7 @@ form.addEventListener('submit', async (e) => {
         } else {
             showToast(data.message, 'success');
             setTimeout(() => {
-                location.href = '../lobby/';
+                location.href = 'lobby/';
             }, 2000);
         }
     } catch (err) {

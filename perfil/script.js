@@ -11,15 +11,13 @@ async function loadUser() {
 
     if (data.error || !data.user || !data.user.email) {
       alert("Você precisa estar logado para acessar esta página.");
-      window.location.href = "../login/index.html";
+      window.location.href = "../index.html";
       return;
     }
 
-    // CORREÇÃO: Adicionar estas linhas para preencher os dados do usuário
     nomeUsuario.textContent = data.user.name;
     emailUsuario.textContent = data.user.email;
     
-    // Atualizar o avatar também
     if (data.user.avatar) {
       avatarImg.src = data.user.avatar + '?t=' + Date.now();
     }
@@ -27,7 +25,7 @@ async function loadUser() {
   } catch (err) {
     console.error("Erro ao carregar usuário:", err);
     alert("Erro ao verificar login. Faça login novamente.");
-    window.location.href = "../login/index.html";
+    window.location.href = "../index.html";
   }
 }
 
