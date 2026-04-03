@@ -1,5 +1,5 @@
 create database chess;
-use chess;w
+use chess;
 drop table if exists users;
 CREATE TABLE users (
   id int NOT NULL AUTO_INCREMENT,	

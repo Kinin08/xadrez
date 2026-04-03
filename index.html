@@ -10,6 +10,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <script type="module" src="script.js" defer></script>
 </head>
+<!-- EqQ?uxY&Eqq?4!P-->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<button onclick="addUser()">Adicionar Usuário</button>
+
+<script>
+    const supabaseUrl = "https://xagrpbnjsunaelvekizp.supabase.co";
+    const supabaseKey = "sb_publishable_rRdc0WPH4GUa_0NMgkfxPQ_kwwf62mj";
+    const client = supabase.createClient(supabaseUrl, supabaseKey);
+
+    async function addUser() {
+        const { data, error } = await client
+            .from("user")    // <- nome da sua tabela
+            .insert({
+                name: "Welygton",
+                email: "tasas@gmail.com",
+                password: "123456",
+                avatar: "https://meuavatar.com/foto.png" // se quiser pode ser null
+            })
+            .select();
+            client.from("user").select("*").then(({ data, error }) => {
+                console.log("Dados:", data);
+                console.log("Erro:", error);
+            });
+        console.log("DATA:", data);
+        console.log("ERRO:", error);
+    }
+</script>
 
 <body>
     <header>
