@@ -22,7 +22,6 @@ if(!in_array($ext, $allowed)){
     exit;
 }
 
-// Verificar tamanho do arquivo (máximo 2MB)
 if($file['size'] > 2 * 1024 * 1024){
     echo json_encode(['error'=>true, 'message'=>'Arquivo muito grande. Máximo 2MB.']);
     exit;
@@ -32,7 +31,6 @@ $filename = 'avatar_' . md5($_SESSION['email']) . '_' . time() . '.' . $ext;
 $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/chess/uploads/';
 $path = $uploadDir . $filename;
 
-// Verificar se é uma imagem real
 $check = getimagesize($file['tmp_name']);
 if($check === false) {
     echo json_encode(['error'=>true, 'message'=>'Arquivo não é uma imagem válida']);
@@ -40,7 +38,6 @@ if($check === false) {
 }
 
 if(move_uploaded_file($file['tmp_name'], $path)){
-    // CORREÇÃO: Usar caminho relativo consistente
     $avatarPath = '/chess/uploads/' . $filename;
 
     $stmt = $conn->prepare("UPDATE users SET avatar = ? WHERE email = ?");

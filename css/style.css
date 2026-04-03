@@ -8,7 +8,6 @@
 }
 
 body {
-  /* fundo com gradiente animado */
   background: linear-gradient(-45deg, #8e9efc, #8b50f8, #a45de3, #5d9dfc);
   background-size: 400% 400%;
   animation: gradientFlow 10s ease infinite;
@@ -29,7 +28,6 @@ a{
 .justify {
   display: flex;
   justify-content: space-between;
-  /* isso manda o primeiro para a esquerda e o último para a direita */
   align-items: center;
   padding-left: 0;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
@@ -55,7 +53,6 @@ header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Links de navegação à direita */
 header a {
   margin-right: 30px;
   color: white;
@@ -72,15 +69,12 @@ header a:hover {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Quando o link está ativo (clicado/selecionado) */
 header a.active {
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 6px 15px rgba(255, 255, 255, 0.2);
   transform: translateY(-3px);
 }
 
-
-/* Container principal */
 .container {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
@@ -92,23 +86,18 @@ header a.active {
   backdrop-filter: blur(12px);
   margin-top: 80px;
   animation: fadeIn 1s ease forwards;
-
-  /* espaço por causa da barra */
 }
 
-/* Título */
 h2 {
   margin-bottom: 30px;
   font-weight: 600;
 }
 
-/* Campos de input */
 .input-box {
   position: relative;
   margin-bottom: 30px;
 }
 
-/* Ícone */
 .input-box i {
   position: absolute;
   left: 0;
@@ -118,7 +107,6 @@ h2 {
   transition: transform 0.4s ease, color 0.4s ease;
 }
 
-/* Input */
 .input-box input {
   width: 100%;
   padding: 10px 30px;
@@ -129,7 +117,6 @@ h2 {
   font-size: 15px;
 }
 
-/* Linha animada */
 .input-box::after {
   content: "";
   position: absolute;
@@ -142,12 +129,10 @@ h2 {
   transition: width 0.5s ease;
 }
 
-/* Placeholder */
 .input-box input::placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Foco: ícone sobe + linha cresce */
 .input-box:focus-within i {
   transform: translateY(-120%) scale(0.9);
   color: #fff;
@@ -157,7 +142,6 @@ h2 {
   width: 100%;
 }
 
-/* Botão */
 .btn {
   width: 140px;
   padding: 12px;
@@ -178,10 +162,8 @@ h2 {
   background: #f6f6f6;
 }
 
-/* Título dentro do container */
 .text-container {
   background: rgba(106, 0, 255, 0.15);
-  /* leve roxo translúcido */
   border-radius: 16px;
   padding: 40px 30px;
   width: 400px;
@@ -195,10 +177,8 @@ h2 {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  /* espaço entre elementos */
 }
 
-/* Título */
 .text-container h1 {
   font-size: 28px;
   font-weight: 700;
@@ -207,7 +187,6 @@ h2 {
   color: #fff;
 }
 
-/* Texto descritivo */
 .text-container p {
   font-size: 16px;
   font-weight: 400;
@@ -216,7 +195,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* Botões juntos */
 .text-container .buttons {
   display: flex;
   gap: 15px;
@@ -224,9 +202,6 @@ h2 {
   justify-content: center;
 }
 
-/* Botões */
-
-/* Botão secundário (Entrar em um jogo) */
 .text-container .btn.join {
   background: #6a00ff;
   color: #fff;
@@ -264,7 +239,6 @@ h2 {
     background-color: rgba(139, 80, 248, 0.1);
 }
 
-/* -------- Animações ---------- */
 @keyframes fadeIn {
   0% {
     opacity: 0;

@@ -3,7 +3,6 @@ include "./connection.php";
 session_start();
 header('Content-Type: application/json');
 
-// Validações básicas
 if (empty($_POST["name"]) || empty($_POST["email"]) || empty($_POST["password"]) || empty($_POST['confirmWord'])) {
     echo json_encode(["error" => true, "message" => "Todos os campos são obrigatórios"]);
     exit;
@@ -14,7 +13,6 @@ $email = trim($_POST["email"]);
 $password = trim($_POST["password"]);
 $confirmWord = trim($_POST["confirmWord"]);
 
-// Verificar se senhas coincidem
 if ($password !== $confirmWord) {
     echo json_encode(["error" => true, "message" => "As senhas não coincidem"]);
     exit;
@@ -30,7 +28,6 @@ if (!str_ends_with($email, '@gmail.com')) {
     exit;
 }
 
-// Verificar se email já existe
 $sql = "SELECT id FROM users WHERE email = ?";
 $stmt = $conn->prepare($sql);
 $stmt->execute([$email]);
@@ -40,7 +37,6 @@ if ($user) {
     exit;
 }
 
-// Inserir usuário
 $hash = password_hash($password, PASSWORD_DEFAULT);
 $defaultAvatar = "/ChessNew/uploads/default.jpg";
 

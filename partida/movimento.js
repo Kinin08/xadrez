@@ -165,7 +165,5 @@ export function movimentoCapturaRei(orig, dest, matriz) {
 }
 
 export function peaoChegouFinal(i, j, peca) {
-  // Promoção baseada apenas na cor da peça, independente da orientação do tabuleiro
-  // ♙ (branco) promove na linha 0, ♟ (preto) promove na linha 7
   return (peca === "♙" && i === 0) || (peca === "♟" && i === 7);
 }

@@ -1,4 +1,3 @@
-/* Contêiner principal dos toasts */
 .toast-container {
   position: fixed;
   top: 20px;
@@ -10,7 +9,6 @@
   pointer-events: none;
 }
 
-/* Estilo base do toast */
 .toast {
   min-width: 240px;
   max-width: 340px;
@@ -26,27 +24,24 @@
   pointer-events: auto;
 }
 
-/* Quando o toast aparece */
 .toast.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Tipos de toast — com fundo colorido */
 .toast.success {
-  background-color: #2ecc71; /* Verde sucesso */
+  background-color: #2ecc71;
 }
  
 .toast.error {
-  background-color: #e74c3c; /* Vermelho erro */
+  background-color: #e74c3c;
 }
 
 .toast.warning {
-  background-color: #f1c40f; /* Amarelo aviso */
-  color: #222; /* Texto escuro para contraste */
+  background-color: #f1c40f;
+  color: #222;
 }
 
-/* Efeito de entrada */
 @keyframes toast-pop {
   from {
     opacity: 0;
